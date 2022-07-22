@@ -4,7 +4,7 @@ import java.nio.file.Paths;
 
 public class Main {
   public static void main(String[] args) {
-    var app = new EmployeeApplication(new EmployeeTranslator(), Paths.get("./EmployeeData.json"), Paths.get("./EmployeeData.xml"));
+    var app = new EmployeeApplication(EmployeeTranslator.getInstance(), Paths.get("./EmployeeData.json"), Paths.get("./EmployeeData.xml"));
     System.out.println("Translating Started...");
     try {
       app.start();

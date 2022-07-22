@@ -13,7 +13,7 @@ class EmployeeTranslatorTest {
 
   @BeforeEach
   public void init() {
-    classUnderTest = new EmployeeTranslator();
+    classUnderTest = EmployeeTranslator.getInstance();
   }
 
   @Test

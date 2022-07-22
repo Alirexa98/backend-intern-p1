@@ -11,6 +11,17 @@ public class EmployeeTranslator {
   private XmlMapper xmlMapper = new XmlMapper(); // these objects must be injected in a real-world app
   private ObjectMapper objectMapper = new ObjectMapper();
 
+  private EmployeeTranslator() {}
+
+  private static EmployeeTranslator instance;
+
+  public static EmployeeTranslator getInstance() {
+    if (instance == null) {
+      instance = new EmployeeTranslator();
+    }
+    return instance;
+  }
+
   List<Employee> decodeEmployeesFromJson(String json) throws JsonProcessingException {
     return objectMapper.readValue(json, new TypeReference<List<Employee>>() {
     });
